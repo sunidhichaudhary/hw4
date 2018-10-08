@@ -1,7 +1,7 @@
 #include "Player.h"
 #include<algorithm>
 using namespace std;
-void toLower(string str)
+string toLower(string str)
 {
 	for(int i=0;i<str.length();++i)
 	{
@@ -10,6 +10,7 @@ void toLower(string str)
 			str[i] = str[i]+32;
 		}
 	}
+	return str;
 }	
 Player :: Player(std::string const & name, size_t maxTiles):_name(name),_maxTiles(maxTiles),_score(0){ }
 Player :: ~Player()
@@ -27,29 +28,35 @@ std::set<Tile*> Player :: getHandTiles() const
 }
 bool Player :: hasTiles(std::string const & move, bool resolveBlanks) const
 {
-	move = toLower(move);
+	string lower = move;
+	lower = toLower(lower);
 	string has;
-	std::vector<Tile*> :: iterator it;
+	std :: set<Tile*> has_tiles_set = this->getHandTiles();
+	std::set<Tile*> :: iterator it;
 	Tile *p;
-	for(it = _playerTiles.begin();it!= _playerTiles.end();it++)
+	for(it = has_tiles_set.begin();it!= has_tiles_set.end();it++)
 	{
 		p = *it;
-		has.insert(p->getLetter());
+		has.insert(has.end(),p->getLetter());
 	}
-	for (int i = 0; i < move.length(); ++i)
+	for (int i = 0; i < lower.length(); ++i)
 	{
-		if(move[i] == '?' && resolveBlanks == true)
+		if(lower[i] == '?' && resolveBlanks == true)
 		{
-			size_t found = has.find(move[i]);
+			size_t found = has.find(lower[i]);
 			if(found != string::npos)
 				{	
 					i++;
 					continue;
 				}
+			else
+			{
+				return false;
+			}
 		}
 		else
 		{
-			size_t found = has.find(move[i]);
+			size_t found = has.find(lower[i]);
 			if(found != string::npos)
 				continue;
 			else

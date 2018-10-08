@@ -23,10 +23,10 @@ public:
 	   Light blue = double word score, Dark blue = double word score.
 	   Grey = normal
 	  */
-	static void printBoard(Board const & board);
+	static void printBoard(Board & board);
 
 	/* Prints the hand of the given player out. */
-	static void printHand(Player const & player);
+	static void printHand(Player & player);
 };
 
 #endif //_CONSOLEPRINTER_H

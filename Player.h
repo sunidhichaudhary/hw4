@@ -33,6 +33,11 @@ public:
 	/* Returns the set of tiles the player currently holds. */
 	std::set<Tile*> getHandTiles() const;
 
+	size_t getMaxTiles() const
+	{
+		return 7;
+	}
+
 	/* Reads a move string and confirms that the player has the tiles necessary to
 	   execute this move.
 

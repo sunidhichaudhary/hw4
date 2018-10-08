@@ -66,7 +66,7 @@ const std::string cross("\u253c");
 
 const std::string space(" ");
 
-void ConsolePrinter::printBoard(Board const &board)
+void ConsolePrinter::printBoard(Board &board)
 {
 	const size_t horizSquares = board.getRows();
 	const size_t vertSquares = board.getColumns();
@@ -243,7 +243,7 @@ void ConsolePrinter::printBoard(Board const &board)
 	std::cout << bottomRightCorner << rang::style::reset << std::endl;
 }
 
-void ConsolePrinter::printHand(Player const &player)
+void ConsolePrinter::printHand(Player &player)
 {
 	const std::set<Tile *> tiles = player.getHandTiles();
 

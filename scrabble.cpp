@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Bag.h"
 #include "Board.h"
+#include "ConsolePrinter.h"
 using namespace std;
 
 int handsize,seed;
@@ -59,7 +60,10 @@ int main(int argc, char const *argv[])
 	}
 
 	// Initialize a board
-	Board board("board.txt");
+	Board brd(board);
+
+	// Initialize a console printer object
+	ConsolePrinter cp;
 
 	// Round robin working of players
 	while(1) {
@@ -68,10 +72,22 @@ int main(int argc, char const *argv[])
 		for(int i=0; i<num_of_players; i++) {
 
 			// Show current Status of the board
-			// vector<vector<Square>> board_vector = board.sq; // TODO: make sq private in board.h
-			board.showCurrentBoard();
+			cp.printBoard(brd);
+
+			Player player = players[i];
 
 			// Show the tiles player has
+			cp.printHand(player);
+			// set<Tile*> handTiles = player.getHandTiles();
+			// set<Tile*> :: iterator it;
+			// cout << "Current tiles in player's hand are: ";
+			// for(it = handTiles.begin(); it!=handTiles.end(); it++)
+			// {
+			// 	Tile *p;
+			// 	p = *it;
+			// 	cout<<p->getLetter()<<" ";
+			// }
+			// cout << endl;
 
 			// Current Score of all the players in the game
 
@@ -84,7 +100,6 @@ int main(int argc, char const *argv[])
 			// wait until press enter
 			// cin.ignore();
 
-			break;
 		}
 
 		break;
@@ -92,6 +107,7 @@ int main(int argc, char const *argv[])
 
 		// End a game when bag is empty and show winners
 	}
+
 	// For testing purpose only
 	// for(int i=0;i<num_of_players;i++)
 	// {
@@ -101,8 +117,14 @@ int main(int argc, char const *argv[])
 	// 	cout<<p.getName()<<" "<<p.getScore()<<" ";
 	// 	for(it = t.begin();it!=t.end();it++)
 	// 	{
-	// 		cout<<*it<<" ";
+	// 		Tile *p;
+	// 		p = *it;
+	// 		cout<<p->getLetter()<<" ";
 	// 	}
 	// 	cout<<endl;
 	// }
+
+	//testing of hasTiles
+	// cout<<players[1].hasTiles("o?z",1)<<endl;
+
 }
