@@ -28,6 +28,7 @@ class Board
 public:
 	int x,y,ix,iy;
 	vector<vector<Square>> sq;
+
 	/* constructor that initializes the board state with an empty board
            and the size and bonuses and start square based on the given file. */
 	Board (std::string board_file_namey);
@@ -68,6 +69,8 @@ public:
 
 	/* Returns the number of columns of the board.*/
 	size_t getColumns() const;
+
+    void showCurrentBoard() const;
 
 };
 

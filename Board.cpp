@@ -88,6 +88,25 @@ size_t Board :: getColumns() const
 {
 	return y;
 }
+
+void Board :: showCurrentBoard() const
+{
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < y; j++)
+        {
+            char letter = sq[i][j].getLetter();
+            if(letter == ' ') {
+                cout << ".";
+            }
+            else {
+                cout << letter;
+            }
+        }
+        cout << endl;
+    }
+}
+
 // int main(int argc, char const *argv[])
 // {
 // 	/* code */
