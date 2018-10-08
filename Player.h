@@ -67,9 +67,19 @@ public:
 	void addTiles (std::vector<Tile*> const & tilesToAdd);
 
 	//Add more public/protected/private functions/variables here.
-	std :: string name;
+	std :: string getName() const 
+	{
+		return name;
+	}
+	int getScore() const
+	{
+		return score;
+	}
+private:
+	std :: string const name;
 	int score;
-	Tile* tiles;
+	std :: vector<Tile*> playerTiles;	
+	
 
 };
 

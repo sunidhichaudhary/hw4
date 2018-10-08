@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include "Player.h"
+#include "Bag.h"
 using namespace std;
 int handsize,seed;
 string str,board,tiles,dictionary;
@@ -24,6 +25,7 @@ void read_config(char const* c)
 int main(int argc, char const *argv[])
 {
 	read_config(argv[1]);
+	Bag bag(tiles,seed);
 	int num_of_players;
 	cout<<"Enter the number of players."<<endl;
 	cin>>num_of_players;
