@@ -42,8 +42,7 @@ int main(int argc, char const *argv[])
 		Player p(names[i],handsize);
 		p.addTiles(bag.drawTiles(handsize));
 		players.push_back(p);
-	}
-	
+	}	
 	// For testing purpose only
 	for(int i=0;i<num_of_players;i++)
 	{
@@ -59,4 +58,6 @@ int main(int argc, char const *argv[])
 		}
 		cout<<endl;
 	}
+	//testing of hasTiles
+	cout<<players[1].hasTiles("o?z",1)<<endl;
 }
