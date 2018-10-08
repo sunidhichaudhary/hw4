@@ -43,6 +43,7 @@ int main(int argc, char const *argv[])
 		p.addTiles(bag.drawTiles(handsize));
 		players.push_back(p);
 	}
+	
 	// For testing purpose only
 	for(int i=0;i<num_of_players;i++)
 	{
