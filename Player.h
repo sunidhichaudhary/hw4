@@ -69,16 +69,16 @@ public:
 	//Add more public/protected/private functions/variables here.
 	std :: string getName() const 
 	{
-		return name;
+		return _name;
 	}
 	int getScore() const
 	{
-		return score;
+		return _score;
 	}
 private:
-	std :: string const name;
-	int score;
-	std :: vector<Tile*> playerTiles;	
+	std :: string const _name;
+	int _score;
+	std :: vector<Tile*> _playerTiles;	
 	
 
 };
