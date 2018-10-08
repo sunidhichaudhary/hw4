@@ -24,6 +24,9 @@ void read_config(char const* c)
 }
 int main(int argc, char const *argv[])
 {
+	ConsolePrinter printer;
+	Board brd("board.txt");
+	printer.printBoard(brd);
 	read_config(argv[1]);
 	Bag bag(tiles,seed);
 	int num_of_players;
@@ -46,18 +49,21 @@ int main(int argc, char const *argv[])
 	// For testing purpose only
 	for(int i=0;i<num_of_players;i++)
 	{
+
 		Player p =players[i];
-		set<Tile*> t = p.getHandTiles();
-		set<Tile*> :: iterator it;
-		cout<<p.getName()<<" "<<p.getScore()<<" ";
-		for(it = t.begin();it!=t.end();it++)
-		{
-			Tile *p;
-			p = *it;
-			cout<<p->getLetter()<<" ";
-		}
-		cout<<endl;
+		printer.printHand(p);
+
+		// set<Tile*> t = p.getHandTiles();
+		// set<Tile*> :: iterator it;
+		// cout<<p.getName()<<" "<<p.getScore()<<" ";
+		// for(it = t.begin();it!=t.end();it++)
+		// {
+		// 	Tile *p;
+		// 	p = *it;
+		// 	cout<<p->getLetter()<<" ";
+		// }
+		// cout<<endl;
 	}
 	//testing of hasTiles
-	cout<<players[1].hasTiles("o?z",1)<<endl;
+	// cout<<players[1].hasTiles("o?z",1)<<endl;
 }

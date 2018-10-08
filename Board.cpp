@@ -1,19 +1,20 @@
 #include "Board.h"
 #include<fstream>
 #include<iostream>
+#include "ConsolePrinter.h"
 using namespace std;
 Board :: Board(std::string board_file_namey)
 {
 	fstream fp;
 	fp.open(board_file_namey);
-	fp>>x>>y>>ix>>iy;
-	sq.resize(x);
+	fp>>num_of_col>>num_of_row>>starting_x>>starting_y;
+	sq.resize(num_of_row);
 	char a;
-	for(int i = 0; i < x; i++)
-		for(int j = 0;j < y; j++)
+	for(int i = 0; i < num_of_row; i++)
+		for(int j = 0;j < num_of_col; j++)
 		{
 			fp>>a;
-			if(i == ix && j == iy)
+			if(i == starting_x-1 && j == starting_y-1)
 			{
 				if(a == '.')
 				{
@@ -78,29 +79,31 @@ Board :: ~Board()
 }
 Square * Board :: getSquare (size_t x, size_t y)
 {
-	return &sq[x][y];
+	return &sq[y-1][x-1];
 }
 size_t Board :: getRows() const
 {
-	return x;
+	return num_of_row;
 }
 size_t Board :: getColumns() const
 {
-	return y;
+	return num_of_col;
 }
-// int main(int argc, char const *argv[])
-// {
-// 	/* code */
-// 	Board board("board.txt");
-// 	Square *ptr;
-// 	for(int i = 0; i < 15; i++)
-// 	{
-// 		for(int j = 0;j < 15; j++)
-// 		{
-// 			ptr = board.getSquare(i,j);
-// 			cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
-// 		}
-// 		cout<<endl;
-// 	}
-// 	return 0;
-// }
+int main(int argc, char const *argv[])
+{
+	/* code */
+	ConsolePrinter printer;
+	Board brd("board.txt");
+	Square *ptr;
+	printer.printBoard(brd);
+	// for(int i = 0; i < 15; i++)
+	// {
+	// 	for(int j = 0;j < 15; j++)
+	// 	{
+	// 		ptr = board.getSquare(i,j);
+	// 		cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
+	// 	}
+	// 	cout<<endl;
+	// }
+	return 0;
+}

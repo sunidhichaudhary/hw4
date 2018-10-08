@@ -75,6 +75,10 @@ public:
 	{
 		return _score;
 	}
+	size_t getMaxTiles()
+	{
+		return 7;
+	}
 
 private:
 	std :: string const _name;

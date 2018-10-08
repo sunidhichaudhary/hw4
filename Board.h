@@ -26,7 +26,7 @@ class Board
 {
 	
 public:
-	int x,y,ix,iy;
+	int num_of_col,num_of_row,starting_x,starting_y;
 	vector<vector<Square>> sq;
 	/* constructor that initializes the board state with an empty board
            and the size and bonuses and start square based on the given file. */
