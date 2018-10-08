@@ -40,6 +40,20 @@ int main(int argc, char const *argv[])
 	for(int i=0;i<num_of_players;i++)
 	{
 		Player p(names[i],handsize);
+		p.addTiles(bag.drawTiles(handsize));
 		players.push_back(p);
 	}
+	// For testing purpose only
+	// for(int i=0;i<num_of_players;i++)
+	// {
+	// 	Player p =players[i];
+	// 	set<Tile*> t = p.getHandTiles();
+	// 	set<Tile*> :: iterator it;
+	// 	cout<<p.getName()<<" "<<p.getScore()<<" ";
+	// 	for(it = t.begin();it!=t.end();it++)
+	// 	{
+	// 		cout<<*it<<" ";
+	// 	}
+	// 	cout<<endl;
+	// }
 }

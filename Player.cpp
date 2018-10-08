@@ -5,3 +5,12 @@ Player :: ~Player()
 {
 
 }
+void Player :: addTiles(std::vector<Tile*> const & tilesToAdd)
+{
+	this->_playerTiles = tilesToAdd;
+}
+std::set<Tile*> Player :: getHandTiles() const
+{
+	set<Tile*> s(_playerTiles.begin(),_playerTiles.end());
+	return s;
+}
