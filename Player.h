@@ -79,6 +79,7 @@ private:
 	std :: string const _name;
 	int _score;
 	std :: vector<Tile*> _playerTiles;	
+	size_t _maxTiles;
 	
 
 };
