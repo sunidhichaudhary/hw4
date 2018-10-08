@@ -93,21 +93,22 @@ size_t Board :: getColumns() const
 {
 	return num_of_col;
 }
-int main(int argc, char const *argv[])
-{
-	/* code */
-	ConsolePrinter printer;
-	Board brd("board.txt");
-	Square *ptr;
-	printer.printBoard(brd);
-	// for(int i = 0; i < 15; i++)
-	// {
-	// 	for(int j = 0;j < 15; j++)
-	// 	{
-	// 		ptr = board.getSquare(i,j);
-	// 		cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
-	// 	}
-	// 	cout<<endl;
-	// }
-	return 0;
-}
+
+// int main(int argc, char const *argv[])
+// {
+// 	/* code */
+// 	ConsolePrinter printer;
+// 	Board brd("board.txt");
+// 	Square *ptr;
+// 	printer.printBoard(brd);
+// 	// for(int i = 0; i < 15; i++)
+// 	// {
+// 	// 	for(int j = 0;j < 15; j++)
+// 	// 	{
+// 	// 		ptr = board.getSquare(i,j);
+// 	// 		cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
+// 	// 	}
+// 	// 	cout<<endl;
+// 	// }
+// 	return 0;
+// }
