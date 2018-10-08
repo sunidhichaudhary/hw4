@@ -43,64 +43,58 @@ Board :: Board(std::string board_file_namey)
 				}
 			}
 
-            else
-            {
-                if(a == '.')
-                {
-                    Square s(1,1,false);
-                    sq[i].push_back(s);
-                }
-                else if(a == '2')
-                {
-                    Square s(2,1,false);
-                    sq[i].push_back(s);
-                }
-                else if(a == '3')
-                {
-                    Square s(3,1,false);
-                    sq[i].push_back(s);
-                }
-                else if(a == 'd')
-                {
-                    Square s(1,2,false);
-                    sq[i].push_back(s);
-                }
-                else if(a == 't')
-                {
-                    Square s(1,3,false);
-                    sq[i].push_back(s);
-                }
-            }
-        }
+			else
+			{
+				if(a == '.')
+				{
+					Square s(1,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == '2')
+				{
+					Square s(2,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == '3')
+				{
+					Square s(3,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == 'd')
+				{
+					Square s(1,2,false);
+					sq[i].push_back(s);
+				}
+				else if(a == 't')
+				{
+					Square s(1,3,false);
+					sq[i].push_back(s);
+				}
+			}
+		}
 }
-
 Board :: ~Board()
 {
 
 }
-
 Square * Board :: getSquare (size_t x, size_t y)
 {
 	return &sq[y-1][x-1];
 }
-
 size_t Board :: getRows() const
 {
 	return num_of_row;
 }
-
 size_t Board :: getColumns() const
 {
 	return num_of_col;
 }
-
 // int main(int argc, char const *argv[])
 // {
 // 	/* code */
-// 	ConsolePrinter printer;
-// 	Board brd("board.txt");
+	
 // 	Square *ptr;
-// 	printer.printBoard(brd);
+	
 // 	// for(int i = 0; i < 15; i++)
 // 	// {
 // 	// 	for(int j = 0;j < 15; j++)
