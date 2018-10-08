@@ -20,52 +20,55 @@ Board :: Board(std::string board_file_namey)
 					Square s(1,1,true);
 					sq[i].push_back(s);
 				}
-				if(a == '2')
+				else if(a == '2')
 				{
 					Square s(2,1,true);
 					sq[i].push_back(s);
 				}
-				if(a == '3')
+				else if(a == '3')
 				{
 					Square s(3,1,true);
 					sq[i].push_back(s);
 				}
-				if(a == 'd')
+				else if(a == 'd')
 				{
 					Square s(1,2,true);
 					sq[i].push_back(s);
 				}
-				if(a == 't')
+				else if(a == 't')
 				{
-					Square s(3,1,true);
+					Square s(1,3,true);
 					sq[i].push_back(s);
 				}
 			}
-			
-			if(a == '.')
+
+			else
 			{
-				Square s(1,1,false);
-				sq[i].push_back(s);
-			}
-			if(a == '2')
-			{
-				Square s(2,1,false);
-				sq[i].push_back(s);
-			}
-			if(a == '3')
-			{
-				Square s(3,1,false);
-				sq[i].push_back(s);
-			}
-			if(a == 'd')
-			{
-				Square s(1,2,false);
-				sq[i].push_back(s);
-			}
-			if(a == 't')
-			{
-				Square s(3,1,false);
-				sq[i].push_back(s);
+				if(a == '.')
+				{
+					Square s(1,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == '2')
+				{
+					Square s(2,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == '3')
+				{
+					Square s(3,1,false);
+					sq[i].push_back(s);
+				}
+				else if(a == 'd')
+				{
+					Square s(1,2,false);
+					sq[i].push_back(s);
+				}
+				else if(a == 't')
+				{
+					Square s(1,3,false);
+					sq[i].push_back(s);
+				}
 			}
 		}
 }

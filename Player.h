@@ -75,6 +75,7 @@ public:
 	{
 		return _score;
 	}
+
 private:
 	std :: string const _name;
 	int _score;
