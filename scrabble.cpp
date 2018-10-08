@@ -102,7 +102,9 @@ int main(int argc, char const *argv[])
 
 		}
 
+		// Will remove it 
 		break;
+
 		// End a game when all the players passes and show winners
 
 		// End a game when bag is empty and show winners
@@ -126,5 +128,4 @@ int main(int argc, char const *argv[])
 
 	//testing of hasTiles
 	// cout<<players[1].hasTiles("o?z",1)<<endl;
-
 }
