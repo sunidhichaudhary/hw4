@@ -88,19 +88,19 @@ size_t Board :: getColumns() const
 {
 	return y;
 }
-int main(int argc, char const *argv[])
-{
-	/* code */
-	Board board("board.txt");
-	Square *ptr;
-	for(int i = 0; i < 15; i++)
-	{
-		for(int j = 0;j < 15; j++)
-		{
-			ptr = board.getSquare(i,j);
-			cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
-		}
-		cout<<endl;
-	}
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	/* code */
+// 	Board board("board.txt");
+// 	Square *ptr;
+// 	for(int i = 0; i < 15; i++)
+// 	{
+// 		for(int j = 0;j < 15; j++)
+// 		{
+// 			ptr = board.getSquare(i,j);
+// 			cout<<ptr->getLMult()*(ptr->getWMult())<<" ";
+// 		}
+// 		cout<<endl;
+// 	}
+// 	return 0;
+// }
